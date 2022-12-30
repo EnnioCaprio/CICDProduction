@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checking keys
-        run: echo ${{ secrets.SSH_HOST }}
+        run: echo ${{ secrets.SSH_HOSTA }}
