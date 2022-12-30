@@ -6,6 +6,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deployment
-        run: git status
-      - name: Finished deployment
-        run: echo "Finished process."
+        uses: appleboy/ssh-action@v0.1.2
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          key: ${{ secrets.SSH_KEY }}
+          username: ${{ secrets.SSH_USER }}
+
+          script: |
+            mkdir project
+            cd project
+            git clone https://github.com/EnnioCaprio/CICDProduction
+            echo "Successful deployment"
