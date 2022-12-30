@@ -13,8 +13,6 @@ jobs:
           username: ${{ secrets.SSH_USER }}
 
           script: |
-            whoami
-            ls -al
             mkdir project
             cd project
             git clone https://github.com/EnnioCaprio/CICDProduction
