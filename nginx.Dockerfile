@@ -4,6 +4,6 @@ WORKDIR /etc/nginx
 
 COPY config/nginx.conf .
 
-WORKDIR /ssl
+WORKDIR /etc/nginx/ssl
 
-RUN ls /etc/letsencrypt/live/
+COPY ./certs/testingprod.ddns.net/ .
